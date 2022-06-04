@@ -29,6 +29,7 @@ class Location(Resource):
 			self.all_locs['N'].between(lng - 1000, lng + 1000) &
 			self.all_locs['E'].between(lat - 1000, lat + 1000)
 			]
+		locs_of_interest['dist'] = None
 		for loc_i, location in locs_of_interest.iterrows():
 			locs_of_interest.loc[loc_i, 'dist'] = sqrt((float(location['N']) - lng) ** 2 + (
 					float(location['E']) - lat) ** 2)
