@@ -1,15 +1,17 @@
 from math import sqrt
 
 from flask import Flask, request
+from flask_cors import CORS
 from flask_restful import Resource, Api
 import pandas as pd
 
 app = Flask(__name__)
 api = Api(app)
-
+CORS(app)
 
 @app.route('/')
-def hello_world():  # put application's code here
+def hello_world():
+	# put application's code here
 	return 'send location name requests to /location?lat=LV95_latitude&lng=LV95_longitude'
 
 
